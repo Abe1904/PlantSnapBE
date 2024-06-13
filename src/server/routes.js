@@ -1,4 +1,5 @@
 const { registerHandler, loginHandler, profileHandler } = require('./handler');
+const { predictHandler } = require('../services/predictHandler');
 
 const routes = [
   {
@@ -15,6 +16,19 @@ const routes = [
     method: 'GET',
     path: '/secure/profile',
     handler: profileHandler,
+  },
+  {
+    method: 'POST',
+    path: '/predict',
+    handler: predictHandler,
+    options: {
+      payload: {
+        allow: 'multipart/form-data',
+        multipart: true,
+        output: 'stream', // process file as stream
+        parse: true
+      }
+    }
   }
 ];
 

@@ -1,7 +1,7 @@
 const firestore = require('@google-cloud/firestore');
 
 const db = new firestore({
-  databaseId : "credential"
+  databaseId : "user"
 });
 
 //Register
