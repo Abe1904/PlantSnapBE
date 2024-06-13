@@ -9,41 +9,7 @@ async function predictClassification(model, image) {
       .toFloat()
       .div(tf.scalar(255.0)); 
 
-    const classes = [
-        'allamanda',
-        'anemone',
-        'astilbe',
-        'bellflower',
-        'black-eyed-susan',
-        'bluebell',
-        'bougainvillea',
-        'buttercup',
-        'calendula',
-        'california_poppy',
-        'carnation',
-        'coreopsis',
-        'cowslip',
-        'crocus',
-        'daffodil',
-        'daisy',
-        'dandelion',
-        'fritillaria',
-        'gardenia',
-        'hibiscus',
-        'hydrangea',
-        'iris',
-        'lily_valley',
-        'magnolia',
-        'orchid',
-        'pansy',
-        'peony',
-        'rose',
-        'snowdrop',
-        'sunflower',
-        'tiger_lily',
-        'tulip',
-        'water_lily'
-];  
+    const classes = ['daisy', 'dandelion', 'rose', 'sunflower', 'tulip'];  
 
     const prediction = model.predict(tensor);
     const score = await prediction.data();
